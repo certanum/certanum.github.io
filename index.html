@@ -104,6 +104,40 @@ p strong{color:var(--white);font-weight:400}
   letter-spacing:.06em;
 }
 
+.agnostic{
+  margin-top:48px;
+  padding-top:34px;
+  border-top:1px solid var(--rule);
+}
+.agnostic p{max-width:600px}
+.sectors{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:22px 34px;
+}
+.sec h3{
+  font-family:'Geist Mono',monospace;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--white);
+  font-weight:500;
+  margin-bottom:6px;
+}
+.sec p{
+  font-size:.86rem;
+  color:var(--gray);
+  line-height:1.55;
+  margin:0;
+}
+.indic{
+  margin-top:30px;
+  font-size:.78rem;
+  color:var(--meta);
+  max-width:600px;
+  line-height:1.7;
+}
 footer{
   border-top:1px solid var(--rule);
   padding:28px;
@@ -139,7 +173,24 @@ footer{
 
   <p>A number an AI computed and a number it invented are identical on the page. Output review cannot separate them, and a tool-call record shows that a tool ran — not where its inputs came from.</p>
 
-  <p>Certanum binds every operand to its source, through the computation, into a signed record any third party can re-execute. <strong>An operand that cannot be resolved does not produce a wrong answer. It produces no answer.</strong></p>
+  <p>Certanum is being built to bind every operand to its source, through the computation, into a signed record any third party can re-execute. <strong>An operand that cannot be resolved does not produce a wrong answer. It produces no answer.</strong></p>
+
+  <div class="agnostic">
+    <p><strong>Model-agnostic and industry-agnostic.</strong> The failure is not a property of any model or any sector. It appears wherever a statistical component supplies an operand to a deterministic calculation whose result is acted upon, recorded, or defended — and wherever a regulator already requires that figure to be evidenced, traceable, validated or reproducible.</p>
+
+    <div class="sectors">
+      <div class="sec"><h3>Financial services</h3><p>Model-risk management, independent validation, record-keeping and declared accuracy for high-risk systems.</p></div>
+      <div class="sec"><h3>Pharmaceuticals &amp; clinical</h3><p>Electronic-record integrity, audit trails and data-point traceability from a derived value back to its source.</p></div>
+      <div class="sec"><h3>Aerospace &amp; aviation</h3><p>Software assurance and traceability from requirement to implementation to verification evidence.</p></div>
+      <div class="sec"><h3>Defense</h3><p>Assurance and cybersecurity obligations across the industrial base; decision-support systems producing consequential figures.</p></div>
+      <div class="sec"><h3>Nuclear</h3><p>Software quality assurance for safety-analysis codes: verification, validation and configuration control.</p></div>
+      <div class="sec"><h3>Medical devices</h3><p>Lifecycle, risk-management and validation regimes for software as a medical device.</p></div>
+      <div class="sec"><h3>Insurance &amp; energy</h3><p>Capital and reserving calculation; reliability standards carrying evidence and audit obligations.</p></div>
+      <div class="sec"><h3>Audit &amp; reporting</h3><p>Internal control over financial reporting: figures supported by evidence a third party can examine and reproduce.</p></div>
+    </div>
+
+    <p class="indic">Descriptions of regulatory obligations are indicative only, are not legal advice, and should be confirmed with qualified counsel. Certanum measures nothing and confers compliance with nothing; it produces the evidence an obligation may require.</p>
+  </div>
 
   <div class="status">
     Certanum Technologies Inc. &nbsp;·&nbsp; In formation &nbsp;·&nbsp; Delaware<br>
@@ -154,7 +205,9 @@ footer{
 
 <footer>
   <div class="fin">
-    Certanum is built against <strong style="color:var(--sub);font-weight:400">AP&#8209;1, the Admissibility Protocol</strong> — an open standard authored by Marcus Rupp and published by ZORRZ Financial Inc. under CC BY 4.0, with an MIT-licensed reference instrument. AP-1 is applicable by any party to any system, including Certanum's own, without the publisher's involvement or consent. Certanum does not control the standard and holds no certification, registry or accreditation role.
+    <strong style="color:var(--sub);font-weight:400">AP&#8209;1, the Admissibility Protocol</strong> is an open standard authored by Marcus Rupp and published by ZORRZ Financial Inc. under CC BY 4.0. Its reference instrument is published under the MIT licence. Both are free, and applicable by any party to any system — including Certanum's own, without the publisher's involvement or consent.
+    <br><br>
+    <strong style="color:var(--sub);font-weight:400">Certanum is not part of that.</strong> AP-1 measures whether a system produces admissible numerical evidence. Certanum is the proprietary commercial architecture built to produce it. The standard is open so that anyone may verify the claim; the system that satisfies it is not. Certanum does not control the standard and holds no certification, registry or accreditation role.
     <br><br>
     <a href="https://numericaladmissibility.org">numericaladmissibility.org</a>
   </div>
