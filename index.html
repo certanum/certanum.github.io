@@ -10,6 +10,8 @@
 <meta property="og:description" content="Verification infrastructure for AI systems that produce consequential numbers.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://certanum.com/">
+<meta property="og:image" content="https://certanum.com/agentic_chain.png">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-sans/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-mono/style.css">
@@ -78,6 +80,13 @@ p.body{color:var(--sub);font-size:1.02rem;max-width:680px}
 p.body + p.body{margin-top:15px}
 p.body strong{color:var(--white);font-weight:400}
 
+.figure{margin-top:42px}
+.figure img{width:100%;height:auto;display:block;border:1px solid var(--rule)}
+.figure figcaption{
+  margin-top:18px;font-size:.8rem;color:var(--meta);
+  line-height:1.7;max-width:680px;
+}
+
 .sectors{
   margin-top:44px;display:grid;
   grid-template-columns:repeat(auto-fit,minmax(238px,1fr));
@@ -124,7 +133,7 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
 <header>
   <div class="mast">
     <div class="mark">CERTANUM</div>
-    <div class="reg">Certanum Technologies Inc. &nbsp;·&nbsp; Delaware<br>In formation &nbsp;·&nbsp; System under development</div>
+    <div class="reg">Certanum Technologies Inc. &nbsp;·&nbsp; Delaware<br>System under development</div>
   </div>
 </header>
 
@@ -138,18 +147,30 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
 </div>
 
 <section>
+  <h2>The chain</h2>
+  <div class="stat">Three of the four links are probabilistic.</div>
+  <p class="body">An agent is a probabilistic component deciding whether, when and with what to invoke a deterministic one. Only the computation itself is deterministic, and a deterministic component inside a probabilistic pipeline does not make the pipeline deterministic.</p>
+
+  <figure class="figure">
+    <img src="agentic_chain.png" alt="Diagram of the agentic chain. Authoritative source data feeds a model that decides whether to invoke computation, writes the computation, has it executed deterministically, then transcribes the result into a reported number. Three of the four links are marked probabilistic; only the execution step is deterministic. Beneath, two identical figures are shown side by side — one computed from source data, one produced because it looked right.">
+    <figcaption>A tool log records that a tool ran. Not where its inputs came from.</figcaption>
+  </figure>
+</section>
+
+<section>
   <h2>The invariant</h2>
-  <div class="stat">The model interprets. It never supplies an operand, and it never releases a figure it did not receive from code.</div>
+  <div class="stat">The model interprets. It never releases a figure it did not receive from code.</div>
   <p class="body">The architecture is designed so that every operand resolves to an authoritative source, through a declared deterministic computation, into a signed record a third party can re-execute. Provenance is established at the operand, not asserted at the output. <strong>The output is not the proof. The execution record is.</strong></p>
   <p class="body"><strong>An operand that cannot be resolved does not degrade the answer. It withholds it.</strong> Refusal is a structural property of the architecture, not a policy applied to a model.</p>
+  <p class="body">Where a model produces an artifact that enters a computation, that artifact is identified, bound by digest, and treated as declared evidence &mdash; not as an unexplained number.</p>
   <p class="body">Certanum does not establish that a figure is correct. It establishes how the figure was produced.</p>
-  <p class="body"><strong>The generative component is not certified. It is partitioned out of the numerical path</strong> — the pattern these regimes already apply to uncertified components. What remains in the path is conventional deterministic software, developable to the assurance bar the domain requires.</p>
+  <p class="body"><strong>The generative component is not certified. It is partitioned out of the numerical path</strong> &mdash; the pattern these regimes already apply to uncertified components. What remains in the path is conventional deterministic software, developable to the assurance bar the domain requires.</p>
 </section>
 
 <section>
   <h2>Where the problem becomes consequential</h2>
   <div class="stat">Model-agnostic. Architecture-neutral. Domain-neutral.</div>
-  <p class="body">The failure is structural rather than sectoral. It occurs wherever a statistical component supplies an operand to a deterministic calculation whose output is acted upon, recorded, regulated or defended — and wherever an existing regime already requires that figure to be evidenced, traceable, validated or reproducible.</p>
+  <p class="body">The failure is structural rather than sectoral. It occurs wherever a statistical component supplies an operand to a deterministic calculation whose output is acted upon, recorded, regulated or defended &mdash; and wherever an existing regime already requires that figure to be evidenced, traceable, validated or reproducible.</p>
 
   <div class="sectors">
     <div class="sec"><h3>Financial services</h3><p>Consequential calculation under model-risk control. Independent validation, record-keeping and declared accuracy.</p></div>
@@ -169,7 +190,7 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
   <div class="boundary">
     <div class="hard">AP-1 is open. Certanum is not.</div>
     <p class="body"><strong>The measurement is open so the claim can be falsified. The system that satisfies it is not.</strong></p>
-    <p class="body">AP-1, the Admissibility Protocol, is an open standard for measuring whether a consequential figure produced by an AI system was computed, traceable, reproducible and refusable. Authored by Marcus Rupp, published by ZORRZ Financial Inc. under CC BY 4.0, with a reference instrument under MIT. Both are free, and applicable by any party to any system — including Certanum's own, without the publisher's involvement or consent.</p>
+    <p class="body">AP-1, the Admissibility Protocol, is an open standard for measuring whether a consequential figure produced by an AI system was computed, traceable, reproducible and refusable. Authored by Marcus Rupp, published by ZORRZ Financial Inc. under CC BY 4.0, with a reference instrument under MIT. Both are free, and applicable by any party to any system &mdash; including Certanum's own, without the publisher's involvement or consent.</p>
     <p class="body">Certanum is the proprietary architecture built to satisfy it.</p>
     <p class="body">Certanum does not control the standard and holds no certification, registry or accreditation role.</p>
   </div>
@@ -178,7 +199,7 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
 <div class="contact">
   <div class="addr"><a href="mailto:contact@certanum.com">contact@certanum.com</a></div>
   <div class="state">
-    Certanum Technologies Inc. &nbsp;·&nbsp; Delaware corporation in formation<br>
+    Certanum Technologies Inc. &nbsp;·&nbsp; Delaware C-Corporation<br>
     Not currently accepting enquiries from the general public
   </div>
 </div>
