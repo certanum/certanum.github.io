@@ -181,7 +181,7 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
 <header>
   <div class="mast">
     <div class="mark">CERTANUM</div>
-    <div class="reg">Certanum Technologies Inc. &nbsp;·&nbsp; Delaware<br>System under development</div>
+    <div class="reg">Certanum Technologies Inc. &nbsp;·&nbsp; Delaware<br>Commercial infrastructure in development</div>
   </div>
 </header>
 
@@ -211,13 +211,28 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
   <p class="body">The architecture is designed so that every operand resolves to an authoritative source, through a declared deterministic computation, into a signed record a third party can re-execute. Provenance is established at the operand, not asserted at the output. <strong>The output is not the proof. The execution record is.</strong></p>
   <p class="body"><strong>An operand that cannot be resolved does not degrade the answer. It withholds it.</strong> Refusal is a structural property of the architecture, not a policy applied to a model.</p>
   <p class="body">Where a model produces an artifact that enters a computation, that artifact is identified, bound by digest, and treated as declared evidence &mdash; not as an unexplained number.</p>
-  <p class="body">Certanum does not establish that a figure is correct. It establishes how the figure was produced.</p>
+  <p class="body">Certanum does not certify the truth of the source data or the suitability of the domain logic. It establishes the derivation &mdash; what operands entered the computation, what operation was executed, and whether the released figure reproduces on re-execution.</p>
   <p class="body"><strong>The generative component is not certified. It is partitioned out of the numerical path</strong> &mdash; the pattern these regimes already apply to uncertified components. What remains in the path is conventional deterministic software, developable to the assurance bar the domain requires.</p>
 </section>
 
 <section>
+  <h2>Public technical record</h2>
+  <div class="stat">The measurement, the instrument and the corrections are public.</div>
+  <p class="body">Certanum asks institutions to rely on evidence rather than assurance. The same standard applies to the standard itself. Each of the following is published and independently inspectable.</p>
+
+  <div class="sectors">
+    <div class="sec"><h3>Open standard</h3><p>AP-1 v1.2 in force, v1.3 open for public comment. CC BY 4.0 with a permanent DOI.<br><a href="https://numericaladmissibility.org">numericaladmissibility.org &#8599;</a></p></div>
+    <div class="sec"><h3>Reference instrument</h3><p>MIT-licensed, executable by any third party without the publisher's involvement.<br><a href="https://github.com/zorrzai/ap1-run">github.com/zorrzai/ap1-run &#8599;</a></p></div>
+    <div class="sec"><h3>Methodology</h3><p>Pre-registered evaluation procedure: execution conditions, fixtures and analysis declared before the run.<br><a href="https://osf.io/y97d8">osf.io/y97d8 &#8599;</a></p></div>
+    <div class="sec"><h3>Correction record</h3><p>Defects found in the instrument, published as errata on the publisher's own initiative, with the affected findings withdrawn.<br><a href="https://numericaladmissibility.org#corrections">Published in full &#8599;</a></p></div>
+  </div>
+
+  <p class="note">A standard whose author declines to be measured by it is a brochure. The correction record exists because the instrument was applied to itself first.</p>
+</section>
+
+<section>
   <h2>Where the problem becomes consequential</h2>
-  <div class="stat">Model-agnostic. Architecture-neutral. Domain-neutral.</div>
+  <div class="stat">One technical problem. Multiple high-consequence environments.</div>
   <p class="body">The failure is structural rather than sectoral. It occurs wherever a statistical component supplies an operand to a deterministic calculation whose output is acted upon, recorded, regulated or defended &mdash; and wherever an existing regime already requires that figure to be evidenced, traceable, validated or reproducible.</p>
 
   <div class="sectors">
@@ -249,26 +264,26 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
     </div>
     <div class="item">
       <div class="d">18 September 2026 &nbsp;·&nbsp; Reuters</div>
-      <div class="t">Anthropic's head of life sciences confirms the company operates a physical biology laboratory in the San Francisco Bay Area, stating that its biology work has moved beyond computational evaluation.</div>
+      <div class="t">Anthropic's head of life sciences confirms to Reuters that the company operates a physical biology laboratory in the San Francisco Bay Area. A company spokesperson subsequently clarified that the laboratory is not specifically for drug discovery.</div>
     </div>
   </div>
 
-  <p class="body" style="margin-top:38px">Consequential numerical values are now entering clinical and manufacturing workflows directly from generative models. The surrounding evidence practices were not designed to catch when a model produces one rather than computing it.</p>
+  <p class="body" style="margin-top:38px">Generative AI is moving directly into pharmaceutical research, development and operational workflows. The evidentiary requirements around consequential derived values must therefore extend to the AI-computation boundary.</p>
 
-  <p class="body">The vulnerability is specific. A clinical value computed from source data and one produced by a model without computation are indistinguishable in the audit record. The ALCOA+ data integrity framework is satisfied in both cases.</p>
+  <p class="body">ALCOA+ establishes requirements for the integrity of the record. It does not, by itself, establish the derivation path of a consequential figure. A record can be attributable, contemporaneous, complete and retained while a separate question remains unanswered: <strong>was the reported figure derived from the declared source data, by the declared computation?</strong></p>
 
-  <p class="body"><strong>Attribution implied origin when a human entered the number. It does not when a model does.</strong></p>
+  <p class="body">When a person entered the number, attribution implied derivation. When a generative component produces it, the two come apart. <strong>Certanum addresses that evidentiary boundary. It is additional to data-integrity controls, not a substitute for them.</strong></p>
 
   <figure class="figure">
-    <img src="alcoa_gap.png" alt="Table of the nine ALCOA+ data integrity attributes — attributable, legible, contemporaneous, original, accurate, complete, consistent, enduring, available — each marked satisfied. A tenth row, origin, asks whether the value derives from the source data at all, and is marked not tested.">
-    <figcaption>ALCOA+ was framed for data a person entered or an instrument captured. When the recorder is a generative component, attribution and origin separate.</figcaption>
+    <img src="derivation_gap.png" alt="Two panels. The upper panel lists the nine ALCOA+ data-integrity attributes and what each establishes about the record. An arrow leads to a lower panel headed Derivation, asking whether the released figure was produced from the declared source data by the declared computation, over operands that resolve to that source — a question the data-integrity attributes do not answer.">
+    <figcaption>Data-integrity controls govern the record. The derivation of the figure inside it is a separate question.</figcaption>
   </figure>
 
   <div class="call">
-    <div class="h">We are selecting one partner for the first clinical application.</div>
-    <p>Certanum's measurement work to date is in regulated financial services. The standard has not been applied in a clinical setting.</p>
+    <div class="h">One partner. One first clinical application.</div>
+    <p>Certanum is opening a single pilot slot for an initial clinical application of the numerical-admissibility methodology. Measurement work to date is in regulated financial services; the standard has not been applied in a clinical setting.</p>
     <p>The partner defines a derivation path that carries consequence in their environment &mdash; from source observations through to a value that reaches a regulatory submission. Certanum constructs the fixture and executes the measurement against frontier systems.</p>
-    <p>No proprietary system is deployed. No data leaves the partner's environment. The deliverable is a jointly published measurement and a named contribution to an open standard.</p>
+    <p>The pilot runs within the partner's environment. No production integration is required and partner data need not leave that environment. The deliverable is a jointly published measurement and a named contribution to an open standard.</p>
     <div class="cta"><a href="mailto:contact@certanum.com?subject=Clinical%20application%20%E2%80%94%20AP-1">contact@certanum.com</a></div>
   </div>
 
@@ -288,7 +303,7 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
 
 <section>
   <h2>Leadership</h2>
-  <div class="stat">Four decades in systems where a claim about a process was never accepted as evidence of it.</div>
+  <div class="stat">Leadership across entrepreneurship, AI assurance, mission-scale verification and banking infrastructure.</div>
 
   <div class="team">
     <div class="person">
@@ -319,7 +334,8 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
 <div class="contact">
   <div class="addr"><a href="mailto:contact@certanum.com">contact@certanum.com</a></div>
   <div class="state">
-    Certanum Technologies Inc. &nbsp;·&nbsp; Delaware C-Corporation
+    Certanum Technologies Inc. &nbsp;·&nbsp; Delaware C-Corporation<br>
+    Institutional and investor enquiries &nbsp;·&nbsp; <a href="mailto:investors@certanum.com">investors@certanum.com</a>
   </div>
 </div>
 
