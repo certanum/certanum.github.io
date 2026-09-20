@@ -197,7 +197,7 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
 <section>
   <h2>The chain</h2>
   <div class="stat">Three of the four links are probabilistic.</div>
-  <p class="body">An agent is a probabilistic component deciding whether, when and with what to invoke a deterministic one. Only the computation itself is deterministic, and a deterministic component inside a probabilistic pipeline does not make the pipeline deterministic.</p>
+  <p class="body">An agent is a probabilistic component deciding whether, when and with what inputs to invoke a deterministic one. The computation may be deterministic; the surrounding pipeline is not. A deterministic component inside a probabilistic pipeline does not make the pipeline deterministic.</p>
 
   <figure class="figure">
     <img src="agentic_chain.png" alt="Diagram of the agentic chain. Authoritative source data feeds a model that decides whether to invoke computation, writes the computation, has it executed deterministically, then transcribes the result into a reported number. Three of the four links are marked probabilistic; only the execution step is deterministic. Beneath, two identical figures are shown side by side — one computed from source data, one produced because it looked right.">
@@ -208,11 +208,18 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
 <section>
   <h2>The invariant</h2>
   <div class="stat">The model interprets. It never releases a figure it did not receive from code.</div>
-  <p class="body">The architecture is designed so that every operand resolves to an authoritative source, through a declared deterministic computation, into a signed record a third party can re-execute. Provenance is established at the operand, not asserted at the output. <strong>The output is not the proof. The execution record is.</strong></p>
+  <p class="body">The architecture is designed so that every operand has a resolved evidentiary origin: authoritative source data where the operand is source-derived, or a declared, immutable artifact at the model boundary where a model supplies an input. The declared computation is then independently re-executable. Provenance is established at the operand, not asserted at the output. <strong>The output is not the proof. The execution record is.</strong></p>
   <p class="body"><strong>An operand that cannot be resolved does not degrade the answer. It withholds it.</strong> Refusal is a structural property of the architecture, not a policy applied to a model.</p>
-  <p class="body">Where a model produces an artifact that enters a computation, that artifact is identified, bound by digest, and treated as declared evidence &mdash; not as an unexplained number.</p>
+  <p class="body">A model-produced artifact is evidence, not an authoritative source. It is identified and bound by digest so that what entered the computation can be established &mdash; never treated as an unexplained number.</p>
   <p class="body">Certanum does not certify the truth of the source data or the suitability of the domain logic. It establishes the derivation &mdash; what operands entered the computation, what operation was executed, and whether the released figure reproduces on re-execution.</p>
   <p class="body"><strong>The generative component is not certified. It is partitioned out of the numerical path</strong> &mdash; the pattern these regimes already apply to uncertified components. What remains in the path is conventional deterministic software, developable to the assurance bar the domain requires.</p>
+</section>
+
+<section>
+  <h2>Why now</h2>
+  <div class="stat">AI is moving from generating language to executing workflows.</div>
+  <p class="body">As AI systems increasingly invoke tools, supply inputs to deterministic calculations, and produce outputs relied upon in regulated and mission-critical environments, the requirement to evidence the numerical path stops being a research question and becomes an infrastructure one.</p>
+  <p class="body"><strong>Certanum is building that layer.</strong></p>
 </section>
 
 <section>
@@ -221,7 +228,7 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
   <p class="body">Certanum asks institutions to rely on evidence rather than assurance. The same standard applies to the standard itself. Each of the following is published and independently inspectable.</p>
 
   <div class="sectors">
-    <div class="sec"><h3>Open standard</h3><p>AP-1 v1.2 in force, v1.3 open for public comment. CC BY 4.0 with a permanent DOI.<br><a href="https://numericaladmissibility.org">numericaladmissibility.org &#8599;</a></p></div>
+    <div class="sec"><h3>Open standard</h3><p>AP-1 v1.2 in force. v1.3 draft open for public comment. CC BY 4.0, versioned and DOI-registered.<br><a href="https://numericaladmissibility.org">numericaladmissibility.org &#8599;</a></p></div>
     <div class="sec"><h3>Reference instrument</h3><p>MIT-licensed, executable by any third party without the publisher's involvement.<br><a href="https://github.com/zorrzai/ap1-run">github.com/zorrzai/ap1-run &#8599;</a></p></div>
     <div class="sec"><h3>Methodology</h3><p>Pre-registered evaluation procedure: execution conditions, fixtures and analysis declared before the run.<br><a href="https://osf.io/y97d8">osf.io/y97d8 &#8599;</a></p></div>
     <div class="sec"><h3>Correction record</h3><p>Defects found in the instrument, published as errata on the publisher's own initiative, with the affected findings withdrawn.<br><a href="https://numericaladmissibility.org#corrections">Published in full &#8599;</a></p></div>
@@ -251,20 +258,20 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px}
 <section>
   <h2>The immediate case</h2>
   <div class="dated">Position as at September 2026</div>
-  <div class="stat">Frontier AI has crossed into the regulated end of pharmaceutical work.</div>
+  <div class="stat">Frontier AI is moving directly into pharmaceutical research and development workflows.</div>
 
   <div class="record">
     <div class="item">
-      <div class="d">May 2026 &nbsp;·&nbsp; SEC Form 8-K</div>
+      <div class="d"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000014272&type=8-K&dateb=&owner=include&count=40">May 2026 &nbsp;·&nbsp; SEC Form 8-K &#8599;</a></div>
       <div class="t">Bristol Myers Squibb records a strategic agreement with Anthropic to deploy Claude across research, clinical development, manufacturing, commercial and corporate functions.</div>
     </div>
     <div class="item">
-      <div class="d">16 September 2026</div>
+      <div class="d"><a href="https://www.novonordisk.com/news-and-media/news-and-ir-materials.html">16 September 2026 &nbsp;·&nbsp; Novo Nordisk &#8599;</a></div>
       <div class="t">Novo Nordisk announces a collaboration to test Claude Science in specific research and development workflows.</div>
     </div>
     <div class="item">
-      <div class="d">18 September 2026 &nbsp;·&nbsp; Reuters</div>
-      <div class="t">Anthropic's head of life sciences confirms to Reuters that the company operates a physical biology laboratory in the San Francisco Bay Area. A company spokesperson subsequently clarified that the laboratory is not specifically for drug discovery.</div>
+      <div class="d"><a href="https://www.reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18/">18 September 2026 &nbsp;·&nbsp; Reuters &#8599;</a></div>
+      <div class="t">Anthropic has established a wet lab in the San Francisco Bay Area as it expands its life-sciences work beyond computational research. The company clarified that the laboratory is not solely for drug discovery.</div>
     </div>
   </div>
 
