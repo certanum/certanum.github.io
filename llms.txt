@@ -31,6 +31,9 @@ Descriptions of regulatory obligations are indicative and are not legal advice.
 
 - [Certanum](https://certanum.com/): the architecture, the invariant, sectors, the public technical record and leadership.
 - [Founding pilots](https://certanum.com/pilots/): scope, terms and how to register interest (pilots@certanum.com).
+- [Pharmaceuticals & life sciences](https://certanum.com/pharma/): derived values in GxP workflows, 21 CFR Part 11, ALCOA+, EU GMP Annex 11 and draft Annex 22, FDA draft AI credibility guidance.
+- [Financial services](https://certanum.com/finance/): model risk (SR 26-2, OCC 2026-13, PRA SS1/23), EU AI Act high-risk uses, FCA Mills Review, payments and agentic commerce.
+- [Defense & critical systems](https://certanum.com/defense/): traceability under the DoD AI Ethical Principles, NATO principles and UK MOD JSP 936; decision support, logistics, maintenance and test and evaluation.
 
 ## Related
 
