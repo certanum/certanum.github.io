@@ -1,0 +1,45 @@
+# Certanum
+
+> Certanum Technologies Inc., a Delaware C-Corporation, is developing verification infrastructure for AI systems that produce consequential numbers. The architecture is designed so that every consequential figure is computed by deterministic software from authoritative source data, recorded with its evidence, independently reproducible, and withheld when the evidence required to support it is absent. It addresses what is also called numerical hallucination, fabricated figures, tool bypass and ungrounded tool arguments in AI agents. Certanum is designed to satisfy AP-1, an open standard for numerical admissibility.
+
+Status as of 29 September 2026:
+
+- Certanum is commercial infrastructure in development. It is not described as deployed in production.
+- Certanum is looking for two founding pilot partners, in financial services or pharmaceuticals: one workflow, one class of consequential figure, success criteria agreed before work begins.
+- No independent evaluation of AP-1 has been completed, and no party unconnected to its publisher has executed the reference instrument.
+
+Standard and system: AP-1, the Admissibility Protocol, is authored by Marcus Rupp and published by ZORRZ Financial Inc. under CC BY 4.0, with an MIT-licensed reference instrument. It can be applied by any party to any system, including Certanum's, without the publisher's involvement. Certanum is a separate company building a proprietary architecture designed to satisfy it. Certanum does not control the standard and holds no certification, registry or accreditation role. Certanum confers compliance with nothing; it produces evidence an existing assurance, validation or audit process may require.
+
+## The problem
+
+- A computed figure and a fabricated figure are indistinguishable in text. Output inspection cannot separate them.
+- A tool-call record establishes that a tool executed. It does not establish where the values entering it originated.
+- In an AI agent, three of four links are probabilistic: deciding whether to compute, selecting the operands, and reporting the result. Only the computation itself is deterministic.
+- Execution controls (policy, permissions, sandboxing) establish whether an action was permitted. They do not establish what supports the number the action produced.
+
+## Where it applies
+
+- Pharmaceuticals and life sciences: derived values in regulated workflows — clinical trial figures, batch-release and GxP calculations, dose and risk calculations, measurements from medical images. Data-integrity controls (21 CFR Part 11, ALCOA+) govern the record; the derivation of the figure inside it is a separate question.
+- Financial services: consequential calculation under model-risk control, independent validation and record-keeping — payments, lending, risk, client and regulatory reporting, and agentic finance.
+- Aerospace and aviation: software assurance and traceability from requirement to verification evidence.
+- Defense and critical systems: reproducibility, traceability and evidence for AI-enabled decision systems.
+- Energy and infrastructure: engineering calculation where numerical error carries physical or financial consequence.
+
+Descriptions of regulatory obligations are indicative and are not legal advice.
+
+## Pages
+
+- [Certanum](https://certanum.com/): the architecture, the invariant, sectors, the public technical record and leadership.
+- [Founding pilots](https://certanum.com/pilots/): scope, terms and how to register interest (pilots@certanum.com).
+
+## Related
+
+- [AP-1 — The Admissibility Protocol](https://numericaladmissibility.org/): the open standard, its version record, correction record and governance disclosure.
+- [AP-1 llms.txt](https://numericaladmissibility.org/llms.txt): machine-readable summary of the standard.
+- [Reference instrument](https://github.com/zorrzai/ap1-run): MIT-licensed, executable by any party.
+
+## Contact
+
+- General: contact@certanum.com
+- Founding pilots: pilots@certanum.com
+- Institutional and investor enquiries: investors@certanum.com
