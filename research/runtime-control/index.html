@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Runtime control and numerical evidence: NVIDIA OpenShell and AP-1 | Certanum</title>
+<meta name="description" content="Agent runtimes such as NVIDIA OpenShell control what an AI agent may access and do. Numerical evidence asks a different question: where each operand of a consequential figure came from, what computation produced it, and whether it can be reproduced.">
+<link rel="canonical" href="https://certanum.com/research/runtime-control/">
+<link rel="describedby" href="/llms.txt">
+<meta name="theme-color" content="#0A0B0D">
+<meta property="og:title" content="Runtime control and numerical evidence: NVIDIA OpenShell and AP-1 | Certanum">
+<meta property="og:description" content="Agent runtimes such as NVIDIA OpenShell control what an AI agent may access and do. Numerical evidence asks a different question: where each operand of a consequential figure came from, what computation produced it, and whether it can be reproduced.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://certanum.com/research/runtime-control/">
+<meta property="og:image" content="https://certanum.com/agentic_chain.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-sans/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-mono/style.css">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="keywords" content="NVIDIA OpenShell, agent runtime, AI agent security, numerical evidence, operand provenance, numerical admissibility, AP-1, AI verification">
+<meta property="og:type" content="article">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "TechArticle",
+   "@id": "https://certanum.com/research/runtime-control/#article",
+   "headline": "Runtime control is not numerical evidence",
+   "description": "Agent runtimes such as NVIDIA OpenShell control what an AI agent may access and do. Numerical evidence asks a different question: where each operand of a consequential figure came from, what computation produced it, and whether it can be reproduced.",
+   "datePublished": "2026-10-01",
+   "dateModified": "2026-10-01",
+   "inLanguage": "en",
+   "url": "https://certanum.com/research/runtime-control/",
+   "author": {
+    "@type": "Organization",
+    "name": "Certanum Technologies Inc.",
+    "url": "https://certanum.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Certanum Technologies Inc.",
+    "url": "https://certanum.com/"
+   },
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "AI agent runtime security"
+    },
+    {
+     "@type": "Thing",
+     "name": "NVIDIA OpenShell"
+    },
+    {
+     "@type": "Thing",
+     "name": "Numerical admissibility"
+    },
+    {
+     "@type": "Thing",
+     "name": "Operand provenance"
+    },
+    {
+     "@type": "Thing",
+     "name": "AP-1"
+    }
+   ],
+   "citation": [
+    "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+    "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Certanum",
+     "item": "https://certanum.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Research",
+     "item": "https://certanum.com/research/runtime-control/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Runtime control and numerical evidence",
+     "item": "https://certanum.com/research/runtime-control/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><header class="hdr">
+  <div class="in">
+    <a class="logo" href="/" aria-label="Certanum — home">CERTANUM</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/pharma/">Pharmaceuticals</a>
+      <a href="/finance/">Financial services</a>
+      <a href="/defense/">Defense</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="https://numericaladmissibility.org">AP-1 &#8599;</a>
+      <a class="cta" href="/pilots/">Founding pilots</a>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+<section class="phero">
+  <div class="hero-grid"></div>
+  <div class="wrap">
+    <div class="crumbs rv"><a href="/">Certanum</a> &nbsp;/&nbsp; Research note</div>
+    <h1 class="h1 rv d1">Runtime control is not numerical evidence.</h1>
+    <p class="lead rv d2">Agent infrastructure is moving enforcement outside the model. On 28 September 2026 NVIDIA released OpenShell, an open-source secure runtime that controls what an AI agent can access and do. This note sets out where runtime control ends, and where the evidence for a consequential number begins.</p>
+    <p class="meta rv d3">Research note &nbsp;&middot;&nbsp; 1 October 2026 &nbsp;&middot;&nbsp; Certanum Technologies Inc.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow rv"><span class="n">01</span>What OpenShell does</div>
+      <div>
+        <h2 class="h2 rv">A secure runtime boundary, enforced outside the agent.</h2>
+        <p class="body rv d1" style="margin-top:22px">In NVIDIA&rsquo;s own words:</p>
+        <div class="qts">
+          <blockquote class="qt rv"><p>&ldquo;an open source secure runtime for executing autonomous AI agents in sandboxed environments with kernel-level isolation&rdquo;</p><cite><a href="https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/">NVIDIA Technical Blog, 28 Sep 2026 &#8599;</a></cite></blockquote>
+          <blockquote class="qt rv"><p>&ldquo;Operators define which files, networks, tools, processes, and credentials an agent can access. OpenShell checks those limits before the agent runs and enforces them as it works.&rdquo;</p><cite><a href="https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/">NVIDIA Technical Blog &#8599;</a></cite></blockquote>
+          <blockquote class="qt rv"><p>&ldquo;a prover shows that its policy cannot escape the intent of the operator&rdquo;</p><cite><a href="https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/">NVIDIA Technical Blog &#8599;</a></cite></blockquote>
+          <blockquote class="qt rv"><p>NVIDIA Sentry, its hardware counterpart, &ldquo;correlates agent interactions, policy decisions, and tool and data access to create a contextual record of agent activity.&rdquo;</p><cite><a href="https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/">NVIDIA Technical Blog &#8599;</a></cite></blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow rv"><span class="n">02</span>The shared principle</div>
+      <div>
+        <h2 class="h2 rv">Do not ask a probabilistic model to guarantee what deterministic infrastructure can guarantee from outside it.</h2>
+        <p class="lead rv d1" style="margin-top:26px">OpenShell applies that principle to access and behaviour: which files, networks, tools, processes and credentials an agent may touch. Certanum applies it to consequential numbers: whether a figure was computed from authoritative source data, by a declared operation, and can be reproduced.</p>
+        <p class="body rv d2" style="margin-top:18px">The two are complementary. Neither replaces the other, and neither depends on the other: the numerical question exists whichever runtime an agent runs in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow rv"><span class="n">03</span>Two questions</div>
+      <div><h2 class="h2 rv">Permission answers whether an agent may perform an action. Numerical admissibility asks whether a consequential figure has the evidence to be released.</h2></div></div>
+    <div class="cmp rv" role="table" aria-label="Runtime control compared with numerical evidence">
+      <div class="cmp-row cmp-hd" role="row"><div class="cmp-k"></div><div class="cmp-a">Runtime control<small>e.g. NVIDIA OpenShell</small></div><div class="cmp-b">Numerical evidence<small>AP-1 &middot; Certanum</small></div></div>
+      <div class="cmp-row"><div class="cmp-k">Question it answers</div><div class="cmp-a">May the agent take this action?</div><div class="cmp-b">Does this figure have the evidence to be released?</div></div>
+      <div class="cmp-row"><div class="cmp-k">Operates on</div><div class="cmp-a">Files, networks, tools, processes and credentials an agent can access</div><div class="cmp-b">The operands of a consequential figure, the declared operation, and the result</div></div>
+      <div class="cmp-row"><div class="cmp-k">Where it sits</div><div class="cmp-a">Outside the agent, before and during execution</div><div class="cmp-b">Outside the model, between computation and release</div></div>
+      <div class="cmp-row"><div class="cmp-k">What it records</div><div class="cmp-a">A contextual record of agent activity: interactions, policy decisions, tool and data access (NVIDIA Sentry)</div><div class="cmp-b">An evidence record: each operand&rsquo;s source, the declared operation, and the re-execution result</div></div>
+      <div class="cmp-row"><div class="cmp-k">When the check fails</div><div class="cmp-a">The action is not permitted; Sentry can quarantine an agent that moves outside its boundary</div><div class="cmp-b">The figure is withheld</div></div>
+    </div>
+    <p class="note">Runtime-control descriptions summarise NVIDIA&rsquo;s published materials linked below; they are not an assessment of OpenShell.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow rv"><span class="n">04</span>Architecture</div>
+      <div><h2 class="h2 rv">Two layers of external control.</h2>
+      <p class="lead rv d1" style="margin-top:22px">The runtime layer governs the action. The numerical layer governs the figure the action produces.</p></div></div>
+    <figure class="dgwrap rv">
+      <div class="dgscroll"><svg class="dg" viewBox="0 0 920 680" role="img" aria-labelledby="dg-t dg-d">
+<title id="dg-t">Two layers of external control for AI agents</title>
+<desc id="dg-d">An AI agent sits above a runtime and policy layer, for example NVIDIA OpenShell, which controls files, networks, tools, processes and credentials and asks whether the agent may take an action. A permitted tool invocation passes operands 82.4 and 1.78 into a numerical evidence layer, which checks operand sources, the declared operation and re-execution, and either releases the figure 26.0 with its evidence record or withholds it.</desc>
+<defs><marker id="dg-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dg-ahp"/></marker></defs>
+<rect class="dg-box" x="300" y="20" width="320" height="48"/>
+<text class="dg-h" x="460" y="49" text-anchor="middle">AI AGENT &#183; ANY MODEL</text>
+<path class="dg-ar" d="M460 68V98" marker-end="url(#dg-ah)"/>
+<rect class="dg-box" x="120" y="100" width="680" height="150"/>
+<text class="dg-h" x="144" y="130">RUNTIME AND POLICY LAYER</text>
+<text class="dg-s" x="144" y="152">e.g. NVIDIA OpenShell &#183; enforced outside the agent</text>
+<g class="dg-chips">
+<rect class="dg-chip" x="144" y="170" width="110" height="30"/><text class="dg-c" x="199" y="190" text-anchor="middle">Files</text>
+<rect class="dg-chip" x="268" y="170" width="110" height="30"/><text class="dg-c" x="323" y="190" text-anchor="middle">Networks</text>
+<rect class="dg-chip" x="392" y="170" width="110" height="30"/><text class="dg-c" x="447" y="190" text-anchor="middle">Tools</text>
+<rect class="dg-chip" x="516" y="170" width="110" height="30"/><text class="dg-c" x="571" y="190" text-anchor="middle">Processes</text>
+<rect class="dg-chip" x="640" y="170" width="136" height="30"/><text class="dg-c" x="708" y="190" text-anchor="middle">Credentials</text>
+</g>
+<text class="dg-q" x="144" y="232">May the agent take this action?</text>
+<path class="dg-ar" d="M460 250V288" marker-end="url(#dg-ah)"/>
+<text class="dg-c" x="474" y="274">permitted call</text>
+<rect class="dg-pill" x="320" y="290" width="280" height="40" rx="20"/>
+<text class="dg-c dg-strong" x="460" y="315" text-anchor="middle">tool invocation &#183; BMI.v1</text>
+<path class="dg-ar" d="M460 330V368" marker-end="url(#dg-ah)"/>
+<text class="dg-c" x="474" y="354">operands 82.4 &#183; 1.78</text>
+<rect class="dg-box dg-num" x="120" y="370" width="680" height="150"/>
+<text class="dg-h dg-cu" x="144" y="400">NUMERICAL EVIDENCE LAYER</text>
+<text class="dg-s" x="144" y="422">AP-1 &#183; Certanum (in development) &#183; outside the model</text>
+<rect class="dg-chip" x="144" y="440" width="148" height="30"/><text class="dg-c" x="218" y="460" text-anchor="middle">Operand source</text>
+<rect class="dg-chip" x="306" y="440" width="166" height="30"/><text class="dg-c" x="389" y="460" text-anchor="middle">Declared operation</text>
+<rect class="dg-chip" x="486" y="440" width="130" height="30"/><text class="dg-c" x="551" y="460" text-anchor="middle">Re-execution</text>
+<rect class="dg-chip" x="630" y="440" width="146" height="30"/><text class="dg-c" x="703" y="460" text-anchor="middle">Release / withhold</text>
+<text class="dg-q" x="144" y="502">Does this figure have the evidence to be released?</text>
+<path class="dg-ar dg-wh" d="M800 445H872" marker-end="url(#dg-ah)"/>
+<text class="dg-c dg-bad" x="836" y="434" text-anchor="middle">withheld</text>
+<path class="dg-ar" d="M460 520V558" marker-end="url(#dg-ah)"/>
+<rect class="dg-box dg-res" x="300" y="560" width="320" height="48"/>
+<text class="dg-c dg-strong" x="460" y="589" text-anchor="middle">26.0 + evidence record</text>
+<path class="dg-ar" d="M460 608V640" marker-end="url(#dg-ah)"/>
+<text class="dg-h" x="460" y="664" text-anchor="middle">CONSEQUENTIAL USE</text>
+</svg></div>
+      <figcaption>Illustrative architecture with synthetic values. The runtime layer is shown generically; OpenShell is one example. Certanum is in development and is not integrated with OpenShell.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow rv"><span class="n">05</span>A worked case</div>
+      <div><h2 class="h2 rv">A permitted action can still carry an unsupported number.</h2></div></div>
+    <div class="sec-head" style="margin-bottom:0"><div></div><div class="rv">
+      <p class="body">An agent is permitted to call a calculation tool. The call is inside policy and recorded. The tool executes correctly. But one operand it passes is <strong>84.2</strong>, while the source record holds <strong>82.4</strong>.</p>
+      <p class="body">The runtime layer has done exactly what it is for: the action was allowed, bounded and recorded. Whether the value entering the calculation matches its source is a different question, about the number rather than the action.</p>
+      <p class="body">The numerical layer resolves each operand against its source, finds the mismatch, and withholds the figure. <a href="/#record">See the evidence record &rarr;</a></p>
+    </div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow rv"><span class="n">06</span>An open question</div>
+      <div><h2 class="h2 rv">Could numerical evidence attach to a runtime-governed execution without changing the runtime&rsquo;s security model?</h2>
+      <p class="lead rv d1" style="margin-top:22px">NVIDIA notes that, as open-source software, OpenShell &ldquo;can also be extended&rdquo;. A natural attachment point for numerical evidence is the record of what actually executed: an evidence record keyed to the execution it describes, referencing the decision that permitted it, rather than a change to the policy layer itself.</p>
+      <p class="body rv d2" style="margin-top:18px">This is an open engineering question, not an existing integration. The same composition, provenance bound on the execution side, is under discussion in the <a href="https://github.com/finos/ai-governance-framework/issues/359">FINOS AI Governance Framework (#359) &#8599;</a>.</p></div></div>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap">
+    <div class="withhold rv">
+      <div class="eyebrow" style="color:var(--gray)">What this note does not claim</div>
+      <div class="body">
+        <p>Certanum is not affiliated with, endorsed by, or partnered with NVIDIA. OpenShell, Sentry and NVIDIA are referred to only to describe their published capabilities. This note does not suggest that OpenShell lacks anything it was designed to do; it describes a different question. Certanum&rsquo;s commercial infrastructure is in development, and no independent evaluation of AP-1 has been completed.</p>
+      </div>
+    </div>
+    <div class="srcs rv">
+      <div class="eyebrow">Sources</div>
+      <ol>
+        <li><a href="https://nvidianews.nvidia.com/news/open-agent-safety-platform">NVIDIA Newsroom: NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment (28 Sep 2026) &#8599;</a></li>
+        <li><a href="https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/">NVIDIA Technical Blog: NVIDIA Open Agent Safety Platform, a Reference for Continuous In-Silicon Agent Monitoring (28 Sep 2026) &#8599;</a></li>
+        <li><a href="https://numericaladmissibility.org">AP-1, Admissibility Protocol 1: open standard, CC BY 4.0 &#8599;</a></li>
+        <li><a href="https://github.com/finos/ai-governance-framework/issues/359">FINOS AI Governance Framework, issue #359: verifiable operand provenance (proposed) &#8599;</a></li>
+      </ol>
+    </div>
+    <div class="btns rv" style="margin-top:44px"><a class="btn primary" href="/pilots/">Founding pilots <span class="arr">&rarr;</span></a><a class="btn" href="/evidence/">Public technical record <span class="arr">&rarr;</span></a></div>
+  </div>
+</section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="/">CERTANUM</a>
+        <p>Verification infrastructure for AI systems that produce consequential numbers. Certanum Technologies Inc. &middot; Delaware C-Corporation &middot; Commercial infrastructure in development.</p>
+      </div>
+      <div>
+        <h4>Industries</h4>
+        <a href="/pharma/">Pharmaceuticals</a>
+        <a href="/finance/">Financial services</a>
+        <a href="/defense/">Defense</a>
+      </div>
+      <div>
+        <h4>Evidence</h4>
+        <a href="/evidence/">Public technical record</a>
+        <a href="/research/runtime-control/">Research: runtime control</a>
+        <a href="https://numericaladmissibility.org">AP-1 standard &#8599;</a>
+        <a href="https://github.com/zorrzai/ap1-run">Reference instrument &#8599;</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="/pilots/">Founding pilots</a>
+        <a href="mailto:contact@certanum.com">contact@certanum.com</a>
+        <a href="mailto:investors@certanum.com">investors@certanum.com</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <p>AP-1 is an open standard authored by Marcus Rupp and published by ZORRZ Financial Inc. under CC BY 4.0. Certanum does not control the standard and holds no certification, registry or accreditation role. No independent evaluation of the standard has been completed to date. Certanum is not affiliated with, endorsed by, or connected to any company, agency or institution named on this site.</p>
+      <p>&copy; 2026 Certanum Technologies Inc. &nbsp;&middot;&nbsp; <button type="button" class="motion-tog" data-motion aria-pressed="false">Pause motion</button></p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
