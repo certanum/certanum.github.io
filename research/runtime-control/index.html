@@ -117,7 +117,7 @@
   <div class="wrap">
     <div class="crumbs rv"><a href="/">Certanum</a> &nbsp;/&nbsp; Research note</div>
     <h1 class="h1 rv d1">Runtime control is not numerical evidence.</h1>
-    <p class="lead rv d2">Agent infrastructure is moving enforcement outside the model. On 28 September 2026 NVIDIA released OpenShell, an open-source secure runtime that controls what an AI agent can access and do. This note sets out where runtime control ends, and where the evidence for a consequential number begins.</p>
+    <p class="lead rv d2">Agent infrastructure is moving enforcement outside the model. On 28 September 2026 NVIDIA announced its Open Agent Safety Platform, with OpenShell, an open-source secure runtime that NVIDIA says it has been building over the past year, at its core. OpenShell controls what an AI agent can access and do. This note sets out where runtime control ends, and where the evidence for a consequential number begins.</p>
     <p class="meta rv d3">Research note &nbsp;&middot;&nbsp; 1 October 2026 &nbsp;&middot;&nbsp; Certanum Technologies Inc.</p>
   </div>
 </section>
@@ -158,12 +158,12 @@
     <div class="cmp rv" role="table" aria-label="Runtime control compared with numerical evidence">
       <div class="cmp-row cmp-hd" role="row"><div class="cmp-k"></div><div class="cmp-a">Runtime control<small>e.g. NVIDIA OpenShell</small></div><div class="cmp-b">Numerical evidence<small>AP-1 &middot; Certanum</small></div></div>
       <div class="cmp-row"><div class="cmp-k">Question it answers</div><div class="cmp-a">May the agent take this action?</div><div class="cmp-b">Does this figure have the evidence to be released?</div></div>
-      <div class="cmp-row"><div class="cmp-k">Operates on</div><div class="cmp-a">Files, networks, tools, processes and credentials an agent can access</div><div class="cmp-b">The operands of a consequential figure, the declared operation, and the result</div></div>
+      <div class="cmp-row"><div class="cmp-k">Operates on</div><div class="cmp-a">The execution environment: files, networks, tools, processes and credentials, under policy the operator defines</div><div class="cmp-b">The operands of a consequential figure, the declared operation, and the result</div></div>
       <div class="cmp-row"><div class="cmp-k">Where it sits</div><div class="cmp-a">Outside the agent, before and during execution</div><div class="cmp-b">Outside the model, between computation and release</div></div>
-      <div class="cmp-row"><div class="cmp-k">What it records</div><div class="cmp-a">A contextual record of agent activity: interactions, policy decisions, tool and data access (NVIDIA Sentry)</div><div class="cmp-b">An evidence record: each operand&rsquo;s source, the declared operation, and the re-execution result</div></div>
-      <div class="cmp-row"><div class="cmp-k">When the check fails</div><div class="cmp-a">The action is not permitted; Sentry can quarantine an agent that moves outside its boundary</div><div class="cmp-b">The figure is withheld</div></div>
+      <div class="cmp-row"><div class="cmp-k">What it records</div><div class="cmp-a">Agent activity: actions, policy decisions, tool and data access</div><div class="cmp-b">An evidence record: each operand&rsquo;s source, the declared operation, and the re-execution result</div></div>
+      <div class="cmp-row"><div class="cmp-k">When the check fails</div><div class="cmp-a">Policy enforcement denies or constrains the action, according to the configured controls</div><div class="cmp-b">The figure is withheld</div></div>
     </div>
-    <p class="note">Runtime-control descriptions summarise NVIDIA&rsquo;s published materials linked below; they are not an assessment of OpenShell.</p>
+    <p class="note">The difference is the property each layer establishes, not how much a runtime can inspect: runtimes can be extended to examine execution in more detail. Runtime-control descriptions summarise NVIDIA&rsquo;s published materials linked below; they are not an assessment of OpenShell.</p>
   </div>
 </section>
 
@@ -224,7 +224,7 @@
       <div><h2 class="h2 rv">A permitted action can still carry an unsupported number.</h2></div></div>
     <div class="sec-head" style="margin-bottom:0"><div></div><div class="rv">
       <p class="body">An agent is permitted to call a calculation tool. The call is inside policy and recorded. The tool executes correctly. But one operand it passes is <strong>84.2</strong>, while the source record holds <strong>82.4</strong>.</p>
-      <p class="body">The runtime layer has done exactly what it is for: the action was allowed, bounded and recorded. Whether the value entering the calculation matches its source is a different question, about the number rather than the action.</p>
+      <p class="body">The runtime layer may have permitted, bounded and recorded the action. That does not by itself establish that the value supplied to the calculation matches an authoritative source value. Establishing that relationship requires additional evidence about the operand and its source: a question about the number, not the action.</p>
       <p class="body">The numerical layer resolves each operand against its source, finds the mismatch, and withholds the figure. <a href="/#record">See the evidence record &rarr;</a></p>
     </div></div>
   </div>

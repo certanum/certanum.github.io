@@ -91,7 +91,13 @@ p.body + p.body{margin-top:16px}
 .hero .wrap{position:relative;width:100%}
 .hero-base{margin-top:34px}
 .hero-copy .lead,.hero-copy .ticker{max-width:min(660px,calc(100% - 440px))}
-.hero .trace{position:absolute;right:var(--pad);width:380px;top:calc(48px + clamp(3.1rem,8.6vw,7.6rem)*.96 + 30px)}
+.hero .trace{position:absolute;right:var(--pad);width:380px;top:calc(48px + 62px + clamp(3.1rem,8.6vw,7.6rem)*.96 + 30px)}
+.hero-note{display:inline-flex;align-items:center;gap:14px;max-width:min(100%,780px);margin-bottom:30px;padding:9px 16px 9px 10px;border:1px solid var(--line2);background:rgba(14,16,19,.7);color:var(--sub);font-size:.86rem;line-height:1.4;transition:border-color .3s var(--ease),color .3s var(--ease)}
+.hero-note:hover{border-color:var(--copper);color:var(--text)}
+.hero-note .tag{flex:none;font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#000;background:var(--copper);padding:5px 8px}
+.hero-note .txt{min-width:0}
+.hero-note .arr{flex:none;color:var(--copper);transition:transform .25s var(--ease)}
+.hero-note:hover .arr{transform:translateX(4px)}
 .hero-copy .lead{margin-top:0}
 .hero-copy .btns{margin-top:44px}
 .hero-copy .ticker{margin-top:36px}
@@ -428,9 +434,12 @@ a.card:hover .go{color:var(--copper)}
   .call{padding:32px 26px}
 }
 @media(max-width:520px){
+  .hero-note{align-items:flex-start;flex-wrap:wrap;gap:8px 12px;font-size:.82rem}
   .pipe{grid-template-columns:1fr 1fr}
   .chain{grid-template-columns:1fr}
   .link{border-left:0;border-top:1px solid var(--line);min-height:0}
   .link:first-child{border-top:0}
   .fgrid{grid-template-columns:1fr}
 }
+
+@media(max-width:1320px){.hero-coords{display:none}}
