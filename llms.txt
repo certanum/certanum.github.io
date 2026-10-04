@@ -2,7 +2,7 @@
 
 > Certanum Technologies Inc., a Delaware C-Corporation, is developing verification infrastructure for AI systems that produce consequential numbers. The architecture is designed so that every consequential figure is computed by deterministic software from authoritative source data, recorded with its evidence, independently reproducible, and withheld when the evidence required to support it is absent. It addresses what is also called numerical hallucination, fabricated figures, tool bypass and ungrounded tool arguments in AI agents. Certanum is designed to satisfy AP-1, an open standard for numerical admissibility.
 
-Status as of 30 September 2026:
+Status as of 4 October 2026:
 
 - Certanum is commercial infrastructure in development. It is not described as deployed in production.
 - Certanum is looking for two founding pilot partners, in financial services or pharmaceuticals: one workflow, one class of consequential figure, success criteria agreed before work begins.
@@ -29,13 +29,15 @@ Descriptions of regulatory obligations are indicative and are not legal advice.
 
 ## Pages
 
-- [Certanum](https://certanum.com/): the architecture, the invariant, sectors, the public technical record and leadership.
+- [Certanum](https://certanum.com/): the architecture, the invariant, sectors, the public technical record and leadership (team).
 - [Founding pilots](https://certanum.com/pilots/): scope, terms and how to register interest (pilots@certanum.com).
 - [Pharmaceuticals & life sciences](https://certanum.com/pharma/): derived values in GxP workflows, 21 CFR Part 11, ALCOA+, EU GMP Annex 11 and draft Annex 22, FDA draft AI credibility guidance.
 - [Financial services](https://certanum.com/finance/): model risk (SR 26-2, OCC 2026-13, PRA SS1/23), EU AI Act high-risk uses, FCA Mills Review, payments and agentic commerce.
 - [Defense & critical systems](https://certanum.com/defense/): traceability under the DoD AI Ethical Principles, NATO principles and UK MOD JSP 936; decision support, logistics, maintenance and test and evaluation.
+- [Evidence](https://certanum.com/evidence/): Certanum's own record (reference engine M1.1, stated as of 4 October 2026: requirement coverage against the engine's own specifications, adversarial verification, cross-domain execution on two clinical derivations, failure integrity; model-agnostic architecture, tested live so far with an OpenAI frontier model), then the public technical record of the AP-1 standard: reference instrument, correction record, registered methodology and known limitations.
+- [Updates](https://certanum.com/updates/): what Certanum has published, and the Field Record, a dated record of developments in AI numerical evidence, each entry linked to its primary source, corrected in public.
+- [Research](https://certanum.com/research/): research notes, newest first.
 - [Research note: runtime control and numerical evidence](https://certanum.com/research/runtime-control/): how agent runtimes such as NVIDIA OpenShell (access and behaviour control) and numerical evidence (operand provenance, re-execution, refusal) answer different questions. Certanum is not affiliated with NVIDIA.
-- [Evidence](https://certanum.com/evidence/): the public technical record — the AP-1 standard, reference instrument, correction record, registered methodology and known limitations.
 
 ## Related
 
