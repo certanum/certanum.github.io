@@ -467,3 +467,10 @@ a.card:hover .go{color:var(--copper)}
   .burger{display:block}
 }
 @media(max-width:1020px){.fr{grid-template-columns:1fr;gap:10px}.fr-d{flex-direction:row;gap:14px}}
+.upd{margin-top:40px;border:1px solid var(--line);border-left:2px solid var(--copper);padding:26px 30px;scroll-margin-top:100px}
+.upd-h{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);margin-bottom:14px}
+.upd p{color:var(--sub);font-size:.98rem;line-height:1.7;margin-top:12px;max-width:760px}
+.upd p a{color:var(--copper);white-space:nowrap}
+.upd .upd-n{color:var(--gray);font-size:.88rem;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
+.phero .meta a{color:var(--copper)}
+@media(max-width:520px){.upd{padding:22px 20px}}

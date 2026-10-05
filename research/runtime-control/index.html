@@ -30,7 +30,7 @@
    "headline": "Runtime control is not numerical evidence",
    "description": "Agent runtimes such as NVIDIA OpenShell control what an AI agent may access and do. Numerical evidence asks a different question: where each operand of a consequential figure came from, what computation produced it, and whether it can be reproduced.",
    "datePublished": "2026-10-01",
-   "dateModified": "2026-10-01",
+   "dateModified": "2026-10-05",
    "inLanguage": "en",
    "url": "https://certanum.com/research/runtime-control/",
    "author": {
@@ -67,7 +67,8 @@
    ],
    "citation": [
     "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
-    "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/"
+    "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+    "https://docs.nvidia.com/openshell/v0.1.1/extensibility/supervisor-middleware/operations"
    ]
   },
   {
@@ -120,7 +121,7 @@
     <div class="crumbs rv"><a href="/">Certanum</a> &nbsp;/&nbsp; <a href="/research/">Research</a> &nbsp;/&nbsp; Runtime control</div>
     <h1 class="h1 rv d1">Runtime control is not numerical evidence.</h1>
     <p class="lead rv d2">Agent infrastructure is moving enforcement outside the model. On 28 September 2026 NVIDIA announced its Open Agent Safety Platform, with OpenShell, an open-source secure runtime that NVIDIA says it has been building over the past year, at its core. OpenShell controls what an AI agent can access and do. This note sets out where runtime control ends, and where the evidence for a consequential number begins.</p>
-    <p class="meta rv d3">Research note &nbsp;&middot;&nbsp; 1 October 2026 &nbsp;&middot;&nbsp; Certanum Technologies Inc.</p>
+    <p class="meta rv d3">Research note &nbsp;&middot;&nbsp; 1 October 2026 &nbsp;&middot;&nbsp; <a href="#update">Updated 5 October 2026</a> &nbsp;&middot;&nbsp; Certanum Technologies Inc.</p>
   </div>
 </section>
 
@@ -238,6 +239,14 @@
       <div><h2 class="h2 rv">Could numerical evidence attach to a runtime-governed execution without changing the runtime&rsquo;s security model?</h2>
       <p class="lead rv d1" style="margin-top:22px">NVIDIA notes that, as open-source software, OpenShell &ldquo;can also be extended&rdquo;. A natural attachment point for numerical evidence is the record of what actually executed: an evidence record keyed to the execution it describes, referencing the decision that permitted it, rather than a change to the policy layer itself.</p>
       <p class="body rv d2" style="margin-top:18px">This is an open engineering question, not an existing integration. The same composition, provenance bound on the execution side, is under discussion in the <a href="https://github.com/finos/ai-governance-framework/issues/359">FINOS AI Governance Framework (#359) &#8599;</a>.</p></div></div>
+    <div class="sec-head" style="margin-bottom:0"><div></div>
+      <div class="upd rv" id="update">
+        <div class="upd-h">Update &middot; 5 October 2026</div>
+        <p>OpenShell&rsquo;s documentation (v0.1.1) describes an extension surface at this point: <strong>Supervisor Middleware</strong>. After network policy allows an HTTP request, and before OpenShell adds provider credentials, middleware receives the request body, target, headers and context. It can allow the request, deny it with a reason, or replace the body; a replaced body is checked again against body-aware policy. Middleware can also inspect a response before it returns to the sandbox. <a href="https://docs.nvidia.com/openshell/v0.1.1/extensibility/supervisor-middleware/operations">NVIDIA OpenShell documentation &#8599;</a></p>
+        <p>For numerical evidence, this is a documented place to ask the question in this note. The request is already permitted; does each numerical operand it carries resolve to an authoritative source? A request that fails could be denied before the external service is contacted and before credentials are added. The response phase is the corresponding place for the figure that comes back.</p>
+        <p class="upd-n">What this does not change: OpenShell&rsquo;s documentation does not describe establishing operand provenance, and middleware sees the request, not where its values came from &mdash; that evidence must travel with the request or be resolved against a source. Certanum has not built or tested an OpenShell middleware.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -254,6 +263,7 @@
       <ol>
         <li><a href="https://nvidianews.nvidia.com/news/open-agent-safety-platform">NVIDIA Newsroom: NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment (28 Sep 2026) &#8599;</a></li>
         <li><a href="https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/">NVIDIA Technical Blog: NVIDIA Open Agent Safety Platform, a Reference for Continuous In-Silicon Agent Monitoring (28 Sep 2026) &#8599;</a></li>
+        <li><a href="https://docs.nvidia.com/openshell/v0.1.1/extensibility/supervisor-middleware/operations">NVIDIA OpenShell documentation v0.1.1: Supervisor Middleware, supported operations &#8599;</a></li>
         <li><a href="https://numericaladmissibility.org">AP-1, Admissibility Protocol 1: open standard, CC BY 4.0 &#8599;</a></li>
         <li><a href="https://github.com/finos/ai-governance-framework/issues/359">FINOS AI Governance Framework, issue #359: verifiable operand provenance (proposed) &#8599;</a></li>
       </ol>
