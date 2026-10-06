@@ -15,8 +15,8 @@
 <meta property="og:url" content="https://certanum.com/research/runtime-control/">
 <meta property="og:image" content="https://certanum.com/agentic_chain.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-sans/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-mono/style.css">
+<link rel="preload" href="/assets/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Geist-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
 <meta name="keywords" content="NVIDIA OpenShell, agent runtime, AI agent security, numerical evidence, operand provenance, numerical admissibility, AP-1, AI verification">
 <meta property="og:type" content="article">
@@ -216,7 +216,7 @@
 <path class="dg-ar" d="M460 608V640" marker-end="url(#dg-ah)"/>
 <text class="dg-h" x="460" y="664" text-anchor="middle">CONSEQUENTIAL USE</text>
 </svg></div>
-      <figcaption>Illustrative architecture with synthetic values. The runtime layer is shown generically; OpenShell is one example. Certanum is in development and is not integrated with OpenShell.</figcaption>
+      <figcaption>Illustrative architecture with synthetic values. The runtime layer is shown generically; OpenShell is one example. Certanum has been run beneath an AI agent inside an OpenShell sandbox as an independent research demonstration on synthetic data (October 2026). It is not an NVIDIA integration, partnership or endorsement.</figcaption>
     </figure>
   </div>
 </section>
@@ -244,7 +244,7 @@
         <div class="upd-h">Update &middot; 5 October 2026</div>
         <p>OpenShell&rsquo;s documentation (v0.1.1) describes an extension surface at this point: <strong>Supervisor Middleware</strong>. After network policy allows an HTTP request, and before OpenShell adds provider credentials, middleware receives the request body, target, headers and context. It can allow the request, deny it with a reason, or replace the body; a replaced body is checked again against body-aware policy. Middleware can also inspect a response before it returns to the sandbox. <a href="https://docs.nvidia.com/openshell/v0.1.1/extensibility/supervisor-middleware/operations">NVIDIA OpenShell documentation &#8599;</a></p>
         <p>For numerical evidence, this is a documented place to ask the question in this note. The request is already permitted; does each numerical operand it carries resolve to an authoritative source? A request that fails could be denied before the external service is contacted and before credentials are added. The response phase is the corresponding place for the figure that comes back.</p>
-        <p class="upd-n">What this does not change: OpenShell&rsquo;s documentation does not describe establishing operand provenance, and middleware sees the request, not where its values came from &mdash; that evidence must travel with the request or be resolved against a source. Certanum has not built or tested an OpenShell middleware.</p>
+        <p class="upd-n">What this does not change: OpenShell&rsquo;s documentation does not describe establishing operand provenance, and middleware sees the request, not where its values came from &mdash; that evidence must travel with the request or be resolved against a source. This note describes a documented extension point; it does not describe a Certanum product.</p>
       </div>
     </div>
   </div>

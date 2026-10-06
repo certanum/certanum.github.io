@@ -1,3 +1,9 @@
+/* Geist 1.7.2, self-hosted (SIL Open Font License 1.1, see /assets/fonts/OFL.txt) */
+@font-face{font-family:'Geist';src:url('/assets/fonts/Geist-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Geist';src:url('/assets/fonts/Geist-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Geist';src:url('/assets/fonts/Geist-SemiBold.woff2') format('woff2');font-weight:600 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Geist Mono';src:url('/assets/fonts/GeistMono-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Geist Mono';src:url('/assets/fonts/GeistMono-Medium.woff2') format('woff2');font-weight:500 700;font-style:normal;font-display:swap}
 /* Certanum — site.css */
 :root{
   --bg:#0A0B0D;
