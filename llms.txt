@@ -37,7 +37,7 @@ Descriptions of regulatory obligations are indicative and are not legal advice.
 - [Evidence](https://certanum.com/evidence/): Certanum's own record (reference engine M1.1, stated as of 4 October 2026: requirement coverage against the engine's own specifications, adversarial verification, cross-domain execution on two clinical derivations, failure integrity; model-agnostic architecture, tested live so far with an OpenAI frontier model), then the public technical record of the AP-1 standard: reference instrument, correction record, registered methodology and known limitations.
 - [Updates](https://certanum.com/updates/): what Certanum has published, and the Field Record, a dated record of developments in AI numerical evidence, each entry linked to its primary source, corrected in public.
 - [Research](https://certanum.com/research/): research notes, newest first.
-- [Research note: runtime control and numerical evidence](https://certanum.com/research/runtime-control/): how agent runtimes such as NVIDIA OpenShell (access and behaviour control) and numerical evidence (operand provenance, re-execution, refusal) answer different questions. Certanum is not affiliated with NVIDIA.
+- [Research note: runtime control and numerical evidence](https://certanum.com/research/runtime-control/): how agent runtimes such as NVIDIA OpenShell (access and behaviour control) and numerical evidence (operand provenance, re-execution, refusal) answer different questions. Certanum is not endorsed by or partnered with NVIDIA.
 
 ## Related
 
