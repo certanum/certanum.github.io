@@ -2,10 +2,10 @@
 
 > Certanum Technologies Inc., a Delaware C-Corporation, is developing verification infrastructure for AI systems that produce consequential numbers. The architecture is designed so that every consequential figure is computed by deterministic software from authoritative source data, recorded with its evidence, independently reproducible, and withheld when the evidence required to support it is absent. It addresses what is also called numerical hallucination, fabricated figures, tool bypass and ungrounded tool arguments in AI agents. Certanum is designed to satisfy AP-1, an open standard for numerical admissibility.
 
-Status as of 4 October 2026:
+Status as of 13 October 2026:
 
 - Certanum is commercial infrastructure in development. It is not described as deployed in production.
-- Certanum is looking for two founding pilot partners, in financial services or pharmaceuticals: one workflow, one class of consequential figure, success criteria agreed before work begins.
+- Certanum is looking for a small number of founding pilot partners, in financial services, pharmaceuticals and defense: one workflow, one class of consequential figure, success criteria agreed before work begins.
 - No independent evaluation of AP-1 has been completed, and no party unconnected to its publisher has executed the reference instrument.
 
 Standard and system: AP-1, the Admissibility Protocol, is authored by Marcus Rupp and published by ZORRZ Financial Inc. under CC BY 4.0, with an MIT-licensed reference instrument. It can be applied by any party to any system, including Certanum's, without the publisher's involvement. Certanum is a separate company building a proprietary architecture designed to satisfy it. Certanum does not control the standard and holds no certification, registry or accreditation role. Certanum confers compliance with nothing; it produces evidence an existing assurance, validation or audit process may require.
